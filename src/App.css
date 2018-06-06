@@ -1,0 +1,141 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.input-group-addon{
+  max-width: 10em;
+}
+.form-control{
+
+}
+.footer{
+      float: right;
+      padding-top: 2em;
+      font-weight: 600;
+      padding-right: 1em;
+      padding-bottom: 1em;
+
+
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.image_player{
+  width: 150px;
+  margin-top: 0em;
+  margin-bottom: 1em;
+}
+.containerWhite{
+  background: white;
+  padding: 2em 2em 2em 2em;
+  margin: 5em 1em 1em 1em;
+  border-radius: 3px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.2s ease; /* Safari */
+    transition: all 0.2s ease;
+}
+
+.containerWhite:hover{
+  margin: 4.9em 1em 1em 1em;
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+body{
+  background: #EEE;
+  font-family: 'Nunito', sans-serif;
+
+
+
+}
+
+.bet_div{
+    background-image: url('./grass.jpeg');
+    background-size: 100%;
+    height: 30em;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.title{
+  font-weight: 600;
+}
+
+.title_game{
+  font-weight: bold;
+  font-size: 2em;
+}
+
+h1{
+  font-weight: 600;
+}
+#input_eth{
+  width: 10em;
+}
+.alignright{
+  text-align: right;
+}
+.button_bet{
+  background: linear-gradient(to left,#29b6f6, #4fc3f7);
+  padding: 0.2em 1em 0.2em 1em;
+  font-size: 1.2em;
+  box-shadow: 0px 3px 10px #4fc3f7;
+  color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  width: 4em;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease; /* Safari */
+    transition: all 0.2s ease;
+}
+
+.ball_blue{
+  background-color: #4fc3f7;
+  /*box-shadow: 0px 0px 4px #4fc3f7;*/
+  display: inline-block;
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+}
+
+
+.button_bet:hover{
+  background: linear-gradient(to left,#29b6f6, #29b6f6);
+}
+
+.button_bet:active{
+  background: linear-gradient(to left,#29b6f6, #29b6f6);
+}
+
+
+.explain_div{
+  margin-top: 20em;
+
+}
+
+.infos{
+  font-weight: 600;
+  text-align: center;
+}
