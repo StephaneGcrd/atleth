@@ -28,6 +28,7 @@ class PlayerOne extends Component {
         var that = this;
         getWeb3.then(results => {
             results.web3.eth.getAccounts((error, acc) => {
+                //Getting the user address
                 this.setState({address: acc[0], meta_on: true, web3: results.web3})
                 that.getNumberBets()
             });
@@ -48,17 +49,19 @@ class PlayerOne extends Component {
         let AtlethInstance;
         this.state.web3.eth.getAccounts((error, accounts) => {
             Atleth.deployed().then((instance) => {
-                //Instanciation du contrat
+                //Creating an instance of the contract
                 AtlethInstance = instance
             }).then((result) => {
-                // On récupère ensuite la valeur du contrat
-                // et on appelle la fonction BuyFirst avec ses paramètres.
+                // Get the value from the contract to prove it worked. (variable result)
+                // Calling the AmountOne function.
                 return AtlethInstance.AmountOne.call({from: accounts[0]})
             }).then((result) => {
                 console.log(result.c)
                 return this.setState({
                     nb_bet: result.c / 10000
                 })
+            }).catch( () => {
+                console.log('error while loading number bets for team one')
             });
         })
     }
@@ -78,7 +81,9 @@ class PlayerOne extends Component {
                 })
             }).then((result) => {
                 // Update state with the result.
-            })
+            }).catch( () => {
+                console.log('Error while betting on team one')
+            });
         })
         this.getNumberBets()
     }

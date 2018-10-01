@@ -24,7 +24,7 @@ class App extends Component {
     }
 
     componentWillMount() {
-
+        // get the user wallet address.
         getWeb3.then(results => {
             results.web3.eth.getAccounts((error, acc) => {
                 this.setState({address: acc[0], meta_on: true, web3: results.web3})
@@ -36,26 +36,27 @@ class App extends Component {
     }
 
 
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
-
-
     setWinner() {
 
         Atleth.setProvider(this.state.web3.currentProvider);
+
         let AtlethInstance;
+
+
         this.state.web3.eth.getAccounts((error, accounts) => {
             Atleth.deployed().then((instance) => {
                 AtlethInstance = instance
             }).then((result) => {
                 // Get the value from the contract to prove it worked.
+                // Calling the distributePrize function, giving 1 in parameter ( so the team 1 will win )
                 return AtlethInstance.distributePrizes(1, {
                     from: accounts[0],
                     value: this.state.bet
                 })
             }).then((result) => {
-                // Update state with the result.
+                console.log('Winner correctly set')
+            }).catch(()  =>{
+                console.log('Error with setWinner() function')
             })
         })
     }
